@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
+import { FloatingMenubar } from "@/components/floating-menubar";
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -28,7 +29,16 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
+      <FloatingMenubar />
+    <div className="container mx-auto flex flex-col items-center justify-items-center min-h-screen p-8 pt-10 pb-20 sm:p-20 font-[family-name:var(--font-geist-sans)]">
+    <div className="w-full max-w-3xl mx-auto py-12 px-4 md:px-6 mb-12">
+      <div className="space-y-4 text-center">
+        <h1 className="text-3xl font-bold">Upload & Monitor</h1>
+        <p className="text-muted-foreground">Easily upload files and track their progress in real-time.</p>
+      </div>
         {children}
+      </div>
+    </div>
       </body>
     </html>
   );
